@@ -64,7 +64,7 @@ export INPUTDIR INFILE_NAME_ABA INFILE_NAME
 export LOG_PROC LOG_DIAG LOG_CUR LOG_VAL LOG_DEBUG
 
 #  The J-Number for the load
-J_NUMBER=J:114441
+J_NUMBER=J:132069
 
 #  The name of the job stream for the load
 JOBSTREAM=aba_assocload
