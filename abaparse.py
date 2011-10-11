@@ -140,7 +140,7 @@ def process():
 	# requires:
 	#
 	# effects: 
-	#   input:  TreeFam input file
+	#   input:  input file
 	#   output: association loader file
 	#
 	# returns:  nothing
