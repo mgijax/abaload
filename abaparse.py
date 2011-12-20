@@ -166,13 +166,17 @@ def process():
 
         tokens = string.split(s2, '|')
 
+	egID = tokens[3]
+	if egID == '':
+	    continue
+
 	mgiID = tokens[5]
 	if mgiID == '':
 	    continue
 
 	if not assocDict.has_key(mgiID):
 	    assocDict[mgiID] = []
-	assocDict[mgiID].append(assocline % (mgiID, mgiID))
+	assocDict[mgiID].append(assocline % (mgiID, egID))
 
         lineNum = lineNum + 1
 
