@@ -43,7 +43,6 @@
 
 import sys
 import os
-import re
 import db
 import string
 import mgi_utils
@@ -161,18 +160,28 @@ def process():
 	    lineNum = lineNum + 1
 	    continue
 
-	s1 = re.sub('","', '|', line[:-1])
-	s2 = re.sub('"', '', s1)
+        tokens = string.split(line[:-1], ',')
 
-        tokens = string.split(s2, '|')
+	egID = tokens[1]
 
-	egID = tokens[3]
-	if egID == '':
-	    continue
+	mgiID = ''
+	results = db.sql('''
+		select m.accID
+		from ACC_Accession a, ACC_Accession m
+		where a.accID = '%s'
+		and a._MGIType_key = 2
+		and a._LogicalDB_key = 55
+		and a._Object_key = m._Object_key
+		and m._MGIType_key = 2
+		and m._LogicalDB_key = 1
+		and m.preferred = 1
+		''' % (egID), 'auto')
+	for r in results:
+	    mgiID = r['accID']
 
-	mgiID = tokens[5]
 	if mgiID == '':
-	    continue
+	    #print 'Invalid EG id:  ', egID
+            continue
 
 	if not assocDict.has_key(mgiID):
 	    assocDict[mgiID] = []

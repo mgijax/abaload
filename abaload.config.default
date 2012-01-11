@@ -45,7 +45,7 @@ OUTPUTDIR=${FILEDIR}/output
 
 #  Complete path name of the input file
 INPUTDIR=${FILEDIR}/input
-INFILE_NAME_ABA=${INPUTDIR}/allGenes.csv
+INFILE_NAME_ABA=${INPUTDIR}/20120109_aba_gene_list.csv
 
 #  Parser output file/Association loader input file
 INFILE_NAME=${OUTPUTDIR}/MGI_ABA_load
