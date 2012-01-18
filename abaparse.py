@@ -37,6 +37,9 @@
 #
 # Modification History:
 #
+# 01/11/2012	lec
+#	- TR10932/new file format 
+#
 # 03/25/2008	lec
 #	- TR 8769
 #

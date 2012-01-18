@@ -17,6 +17,9 @@
 #
 # abaload.sh /mgi/all/wts_projects/10900/10932/20120109_aba_gene_list.csv
 #
+# 01/11/2012	lec
+#	- TR10932/new file format
+#
 # 03/25/2008	lec
 #	- TR 8769
 #
