@@ -81,7 +81,8 @@ fi
 #
 if [ "${APP_INFILE}" = "" ]
 then
-    echo "\n`date`" >> ${LOG_DIAG}
+    echo "" >> ${LOG_DIAG}
+    echo "`date`" >> ${LOG_DIAG}
     echo "Fetching files to load..." >> ${LOG_DIAG}
     APP_INFILE=`${RADAR_DBUTILS}/bin/getFilesToProcess.csh ${RADAR_DBSCHEMADIR} ${JOBSTREAM} ABA`
     STAT=$?
@@ -134,7 +135,8 @@ checkStatus ${STAT} "${ASSOCLOAD}/bin/AssocLoad.sh"
 #
 if [ ${RADAR_FLAG} -eq 1 ]
 then
-    echo "\n`date`" >> ${LOG_DIAG} 
+    echo "" >> ${LOG_DIAG} 
+    echo "`date`" >> ${LOG_DIAG} 
     echo "Mark file ${APP_INFILE} as processed" >> ${LOG_DIAG}
     echo "command is:  ${RADAR_DBUTILS}/bin/logProcessedFile.csh ${RADAR_DBSCHEMADIR} ${JOBKEY} ${APP_INFILE} ABA"
     ${RADAR_DBUTILS}/bin/logProcessedFile.csh ${RADAR_DBSCHEMADIR} ${JOBKEY} ${APP_INFILE} ABA >> ${LOG_DIAG} 2>&1
